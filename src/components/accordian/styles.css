@@ -1,41 +1,75 @@
+/* Wrapper */
 .acc-wrapper {
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 20px;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background: #f9f9f9;
+    /* Light background */
 }
 
+/* Toggle button */
 .acc-wrapper button {
     padding: 10px 20px;
-    background: #614101;
+    background: #007ACC;
+    /* Accent blue */
     color: #fff;
+    border: none;
+    border-radius: 4px;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 16px;
     cursor: pointer;
+    transition: background 0.2s ease;
 }
 
+.acc-wrapper button:hover {
+    background: #005fa3;
+    /* Darker on hover */
+}
+
+/* Accordion container */
 .accordian {
-  width: 500px;
+    width: 500px;
 }
 
+/* Item */
 .item {
-  background: #614101;
-  margin-bottom: 10px;
-  padding: 10px 20px;
+    background: #fff;
+    /* Clean white cards */
+    border: 1px solid #ddd;
+    margin: 5px 0;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
+/* Title row */
 .title {
-  color: #ffffff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: #f5f5f5;
+    padding: 1rem;
+    color: #333;
+    /* Dark text */
+    transition: background 0.2s ease;
 }
 
+.title:hover {
+    background: #eee;
+    /* Subtle hover */
+}
+
+/* Accordion content */
 .acc-content {
-  color: #ffffff;
-  height: auto;
+    overflow: hidden;
+    padding: 0 1rem;
+    color: #555;
+    /* Softer text for answer */
+    background: #fff;
+    line-height: 1.5;
 }
