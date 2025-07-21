@@ -22,16 +22,26 @@ function Accordian() {
     setMultiple(cpyMultiple);
   }
 
+  function toggleMultiSelection() {
+        if (enableMultiSelection) {
+            // Switching FROM multi → single
+            setMultiple([]); // This triggers closing animation
+            // Wait for animation to finish (matches AnimatePresence exit time)
+            setTimeout(() => {
+            setEnableMultiSelection(false);
+            setSelected(null);
+            }, 300); // 300ms matches your motion transition
+        } else {
+            // Switching FROM single → multi
+            setSelected(null); // clear any single open
+            setEnableMultiSelection(true);
+        }
+    }
+
   return (
     <div className="acc-wrapper">
-        <button
-            onClick={() => {
-                setEnableMultiSelection(!enableMultiSelection);
-                setSelected(null);
-                setMultiple([]);
-            }}
-            >
-            Enable Multi Selection
+        <button onClick={toggleMultiSelection}>
+            {enableMultiSelection ? "Disable Multi Selection" : "Enable Multi Selection"}
         </button>
       <div className="accordian">
         {data && data.length > 0 ? (
