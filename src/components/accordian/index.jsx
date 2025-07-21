@@ -67,11 +67,11 @@ function Accordian() {
                     <AnimatePresence initial={false}>
                     {isOpen && (
                         <motion.div
-                        key="content"
+                        key={`content-${dataItem.id}`}
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: 'auto', opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: 'easeInOut' }}
+                        transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}  // 👈 smoother easing!
                         className="acc-content"
                         >
                         {dataItem.answer}
