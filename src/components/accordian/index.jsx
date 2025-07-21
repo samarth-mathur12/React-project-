@@ -71,7 +71,12 @@ function Accordian() {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: 'auto', opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}  // 👈 smoother easing!
+                        transition={{
+                            type: "spring",
+                            stiffness: 100,
+                            damping: 10
+                        }}
+  // 👈 smoother easing!
                         className="acc-content"
                         >
                         {dataItem.answer}
